@@ -3,15 +3,12 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig()
-
-// this works
+/* this works */
 // const data = await useAsyncData(() => $fetch('https://jsonplaceholder.typicode.com/todos/1'))
 
-// this does not work
-// const { data } = await useAsyncData(() => GqlPost())
 
-// this works
+/* this works */
+// const config = useRuntimeConfig()
 // const { data } = await useAsyncData(() => $fetch(config.GQL_HOST, {
 //   method: 'POST',
 //   headers: {
@@ -29,7 +26,12 @@ const config = useRuntimeConfig()
 //   }),
 // }))
 
-// this does not work
+
+/* this does not work */
+// const { data } = await useAsyncData(() => GqlPost())
+
+
+/* this does not work */
 useGqlHeaders({ Accept: 'application/json' })
 const { data } = await useAsyncGql({
   operation: 'Post',
